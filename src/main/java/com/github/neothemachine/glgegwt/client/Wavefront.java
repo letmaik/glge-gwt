@@ -1,6 +1,6 @@
 package com.github.neothemachine.glgegwt.client;
 
-public final class Wavefront extends Object {
+public final class Wavefront extends GObject {
 
 	protected Wavefront() {}
 	

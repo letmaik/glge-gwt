@@ -1,8 +1,8 @@
 package com.github.neothemachine.glgegwt.client;
 
-public class Object extends Events {
+public class GObject extends Events {
 
-	protected Object() {}
+	protected GObject() {}
 	
 	public final native Material getMaterial(int idx) /*-{
 		this.getMaterial(idx);

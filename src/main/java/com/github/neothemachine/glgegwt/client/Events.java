@@ -8,7 +8,7 @@ public class Events extends JavaScriptObject {
 	
 	public final native void addEventListener(String event, Runnable listener) /*-{
 		var callbackFn = $entry(function() {
-			listener.@java.lang.Runnable.run()();
+			listener.@java.lang.Runnable::run()();
 		});
 		this.addEventListener(event, callbackFn);
 	}-*/;

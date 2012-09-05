@@ -1,8 +1,6 @@
 package com.github.neothemachine.glgegwt.client;
 
-import com.google.gwt.core.client.JavaScriptObject;
-
-public final class OpenCTM extends JavaScriptObject {
+public final class OpenCTM extends GObject {
 
 	protected OpenCTM() {}
 	

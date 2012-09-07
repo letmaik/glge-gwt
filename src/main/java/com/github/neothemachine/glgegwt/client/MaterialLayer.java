@@ -87,8 +87,8 @@ public final class MaterialLayer extends JavaScriptObject {
 		return new $wnd.GLGE.MaterialLayer();
 	}-*/;
 	
-	public native void setMapinput(int in) /*-{
-		this.setMapinput(in);
+	public native void setMapinput(int input) /*-{
+		this.setMapinput(input);
 	}-*/;
 	
 	public native void setMapto(int to) /*-{

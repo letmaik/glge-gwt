@@ -19,7 +19,7 @@ public final class Material extends Events {
 	}-*/;
 	
 	public native void addMaterialLayer(MaterialLayer layer) /*-{
-		this.addTexture(layer);
+		this.addMaterialLayer(layer);
 	}-*/;
 	
 }

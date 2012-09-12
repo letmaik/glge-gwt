@@ -4,8 +4,12 @@ public class GObject extends Events {
 
 	protected GObject() {}
 	
+	public final native Material getMaterial() /*-{
+		return this.getMaterial();
+	}-*/;
+	
 	public final native Material getMaterial(int idx) /*-{
-		this.getMaterial(idx);
+		return this.getMaterial(idx);
 	}-*/;
 
 }

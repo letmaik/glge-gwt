@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class RendererGwtTest extends GWTTestCase {
 
-	private Renderer renderer = null;
+	private GLGECanvas canvas = null;
 	
 	@Override
 	public String getModuleName() {
@@ -26,19 +26,14 @@ public class RendererGwtTest extends GWTTestCase {
 	
 	@Override
 	protected void gwtSetUp() throws Exception {
-		Canvas canvas = Canvas.createIfSupported();
-		if (canvas == null) throw new NullPointerException();
-		
-		CanvasElement glCanvas = canvas.getCanvasElement();
-		RootPanel.getBodyElement().appendChild(glCanvas);
-		
-		this.renderer = Renderer.create(glCanvas);
+		canvas = new GLGECanvas();
+		RootPanel.get().add(canvas);
 	}
 	
 	@Test
 	public void testRenderer() {
 		Scene scene = Scene.create();
-		renderer.setScene(scene);
+		canvas.getRenderer().setScene(scene);
 		
 		scene.setBackgroundColor("rgba(0,0,0,0)");
 		
@@ -54,7 +49,7 @@ public class RendererGwtTest extends GWTTestCase {
 		scene.addChild(light);
 		
 		for (int x=0; x < 10; x++) {
-			renderer.render();
+			canvas.getRenderer().render();
 		}
 	}
 

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.neothemachine</groupId>
 	<artifactId>glge-gwt</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.1-SNAPSHOT</version>
 	<name>GLGE-GWT</name>
 	<description>A GWT wrapper for GLGE</description>
 	<url>https://github.com/neothemachine/glge-gwt</url>

@@ -4,7 +4,7 @@ GLGE-GWT is a wrapper of the [GLGE](http://www.glge.org) library for Google Web 
 
 ## Usage
 
-Include the following in your pom:
+1. Include the following in your pom:
 
 		<dependency>
 			<groupId>com.github.neothemachine</groupId>
@@ -18,7 +18,9 @@ Include the following in your pom:
 			<classifier>sources</classifier>
 		</dependency>
 		
-You need both, as the GWT compiler needs the Java sources.
+2. Add the following to your .gwt.xml file:
+
+		<inherits name="com.github.neothemachine.glgegwt.GLGEGWT" />
 
 ## Notes
 

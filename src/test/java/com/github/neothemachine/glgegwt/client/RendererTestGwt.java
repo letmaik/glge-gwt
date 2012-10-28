@@ -15,7 +15,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * @author maik
  *
  */
-public class RendererGwtTest extends GWTTestCase {
+public class RendererTestGwt extends GWTTestCase {
 
 	private GLGECanvas canvas = null;
 	

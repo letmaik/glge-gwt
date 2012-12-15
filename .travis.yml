@@ -7,4 +7,4 @@ env:
     
 after_success:
   - python travis/addServer.py
-  - mvn clean deploy
+  - mvn clean deploy --settings ~/.m2/mySettings.xml

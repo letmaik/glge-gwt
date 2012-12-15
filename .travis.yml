@@ -5,6 +5,6 @@ env:
     - SONATYPE_USERNAME=neothemachine
     - secure: "UHWeEqmQV9rIurfqKdwKQu3AVWWpHzLjjhJW8OhHXgsrGlkKIsErFhCAJvrH\ntVul7m0Q+gfo0SIaUYzgqrYO4EAfMKsabHSBrSTMnZKahh7pVjFyaOB4II8Z\ns5aAY5VeAWo1BCLjQGQgTFiWtVczgdYt9Bat8cnvuQMinAcBjtw="
     
-after_success:
+after_script:
   - python travis/addServer.py
   - mvn clean deploy -DskipTests=true --settings ~/.m2/mySettings.xml

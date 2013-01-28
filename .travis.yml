@@ -6,5 +6,4 @@ env:
     - secure: "UHWeEqmQV9rIurfqKdwKQu3AVWWpHzLjjhJW8OhHXgsrGlkKIsErFhCAJvrH\ntVul7m0Q+gfo0SIaUYzgqrYO4EAfMKsabHSBrSTMnZKahh7pVjFyaOB4II8Z\ns5aAY5VeAWo1BCLjQGQgTFiWtVczgdYt9Bat8cnvuQMinAcBjtw="
     
 after_success:
-  - python travis/addServer.py
-  - mvn clean deploy
+  - [[ $TRAVIS_BRANCH == "foo" ]] && { python travis/addServer.py; mvn clean deploy; };

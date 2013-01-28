@@ -6,4 +6,4 @@ env:
     - secure: "UHWeEqmQV9rIurfqKdwKQu3AVWWpHzLjjhJW8OhHXgsrGlkKIsErFhCAJvrH\ntVul7m0Q+gfo0SIaUYzgqrYO4EAfMKsabHSBrSTMnZKahh7pVjFyaOB4II8Z\ns5aAY5VeAWo1BCLjQGQgTFiWtVczgdYt9Bat8cnvuQMinAcBjtw="
 
 after_success:
-  - [[ $TRAVIS_BRANCH == "foo" ]] && { python travis/addServer.py; mvn clean deploy -DskipTests=true --settings ~/.m2/mySettings.xml; };
+  - [[ $TRAVIS_BRANCH == "master" ]] && { python travis/addServer.py; mvn clean deploy -DskipTests=true --settings ~/.m2/mySettings.xml; };

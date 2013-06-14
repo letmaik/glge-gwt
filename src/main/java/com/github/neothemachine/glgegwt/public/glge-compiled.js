@@ -8181,6 +8181,7 @@ GLGE.Texture.prototype.image=null;
 GLGE.Texture.prototype.glTexture=null;
 GLGE.Texture.prototype.url=null;
 GLGE.Texture.prototype.state=0;
+GLGE.Texture.prototype.anisotropy=8;
 GLGE.Texture.prototype.preAlpha=true;
 
 /**
@@ -8275,6 +8276,7 @@ GLGE.Texture.prototype.doTexture=function(gl){
 		}
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+		if(gl.af) gl.texParameterf(gl.TEXTURE_2D, gl.af.TEXTURE_MAX_ANISOTROPY_EXT, this.anisotropy);
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
 	}else{
@@ -11445,15 +11447,7 @@ GLGE.Renderer=function(canvas,error,props){
 	}
 	var gl=this.gl;
 	
-	/*this.gl.texImage2Dx=this.gl.texImage2D;
-	this.gl.texImage2D=function(){
-		if(arguments.length==9){
-			gl.texImage2Dx(arguments[0], arguments[1], arguments[2],arguments[3],arguments[4],arguments[5],arguments[6],arguments[7],arguments[8]);
-		}else{
-			gl.texImage2Dx(arguments[0], arguments[1], arguments[5],false,false);
-		}
-	}*/
-
+	gl.af = gl.getExtension("MOZ_EXT_texture_filter_anisotropic") || gl.getExtension("WEBKIT_EXT_texture_filter_anisotropic") || gl.getExtension("EXT_texture_filter_anisotropic");;
 	
 	//set up defaults
 	this.gl.clearDepth(1.0);
@@ -21584,7 +21578,7 @@ GLGE.augment(GLGE.Object,GLGE.OpenCTM);
 * @private
 */
 GLGE.OpenCTM.prototype.getAbsolutePath=function(path,relativeto){
-	if(path.substr(0,7)=="http://" || path.substr(0,7)=="file://"  || path.substr(0,7)=="https://"){
+	if(path.substr(0,7)=="http://" || path.substr(0,7)=="file://" || path.substr(0,8)=="https://" || path.substr(0,5)=="blob:"){
 		return path;
 	}
 	else

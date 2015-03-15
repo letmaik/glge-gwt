@@ -9,12 +9,12 @@ GLGE-GWT is a wrapper of the [GLGE](http://www.glge.org) library for Google Web 
 		<dependency>
 			<groupId>com.github.neothemachine</groupId>
 			<artifactId>glge-gwt</artifactId>
-			<version>x.y.z</version>
+			<version>0.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.neothemachine</groupId>
 			<artifactId>glge-gwt</artifactId>
-			<version>x.y.z</version>
+			<version>0.1.1</version>
 			<classifier>sources</classifier>
 		</dependency>
 		

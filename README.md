@@ -22,6 +22,8 @@ GLGE-GWT is a wrapper of the [GLGE](http://www.glge.org) library for Google Web 
 
 		<inherits name="com.github.neothemachine.glgegwt.GLGEGWT" />
 
+3. Have a look at [neothemachine/glge-gwt-sample](https://github.com/neothemachine/glge-gwt-sample) to see a small example project.
+
 ## Notes
 
 This is a work-in-progress! It hasn't been thoroughly tested yet and I won't wrap the whole API, just
